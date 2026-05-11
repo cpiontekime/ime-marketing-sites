@@ -1,40 +1,70 @@
 import Image from "next/image"
+import { Check } from "lucide-react"
 
-const services = [
-  { name: "Flooring", image: "/images/flooring.jpg" },
-  { name: "Generators", image: "/images/generators.jpg" },
-  { name: "Sheds", image: "/images/sheds.jpg" },
+const projects = [
+  {
+    title: "Interior Projects",
+    image: "/images/bjs-interior.jpg",
+    items: ["BATH", "COUNTERTOPS", "CABINET REFACING", "FLOORING", "AND MORE"],
+    gradient: "from-[#4a4a4a]/90 to-[#4a4a4a]/70",
+  },
+  {
+    title: "Exterior Projects",
+    image: "/images/bjs-exterior.jpg",
+    items: ["WINDOWS", "SHEDS", "ROOFING", "SIDING", "AND MORE"],
+    gradient: "from-[#4a4a4a]/90 to-[#4a4a4a]/70",
+  },
+  {
+    title: "Energy Savers",
+    image: "/images/bjs-energy.jpg",
+    items: ["GENERATORS", "HVAC", "INSULATION", "SOLAR", "AND MORE"],
+    gradient: "from-[#2d4a3e]/90 to-[#2d4a3e]/70",
+  },
 ]
 
 export function BJsServicesSection() {
   return (
-    <section className="w-full py-12 md:py-16 bg-background">
+    <section className="w-full py-6 bg-background">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <p className="text-sm font-semibold text-[#c41230] uppercase tracking-wide mb-2">
-          What We Do
-        </p>
-        <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-8">
-          Our Services
-        </h2>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {services.map((service) => (
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {projects.map((project) => (
             <div
-              key={service.name}
-              className="group relative overflow-hidden rounded-lg cursor-pointer"
+              key={project.title}
+              className="group relative overflow-hidden rounded-lg"
             >
-              <div className="aspect-[4/3] relative">
+              <div className="relative aspect-[3/4]">
                 <Image
-                  src={service.image}
-                  alt={`${service.name} services`}
+                  src={project.image}
+                  alt={project.title}
                   fill
-                  className="object-cover transition-transform duration-300 group-hover:scale-105"
+                  className="object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-4">
-                  <h3 className="text-lg font-semibold text-white">
-                    {service.name}
-                  </h3>
+                <div className={`absolute inset-0 bg-gradient-to-b ${project.gradient}`} />
+                
+                {/* Content Overlay */}
+                <div className="absolute inset-0 p-5 flex flex-col">
+                  {/* Title with underline */}
+                  <div className="mb-4">
+                    <h3 className="text-xl font-bold text-white mb-1">
+                      {project.title}
+                    </h3>
+                    <div className="w-full h-0.5 bg-[#c41230]" />
+                  </div>
+                  
+                  {/* Checklist */}
+                  <ul className="space-y-1 flex-1">
+                    {project.items.map((item) => (
+                      <li key={item} className="flex items-center gap-2 text-white text-sm">
+                        <Check className="w-4 h-4 text-white flex-shrink-0" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  
+                  {/* Button */}
+                  <button className="mt-4 bg-[#c41230] hover:bg-[#a30f28] text-white px-4 py-2 rounded text-sm font-medium transition-colors w-fit">
+                    LEARN MORE
+                  </button>
                 </div>
               </div>
             </div>

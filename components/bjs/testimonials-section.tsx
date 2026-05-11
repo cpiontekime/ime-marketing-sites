@@ -1,94 +1,71 @@
 "use client"
 
+import Image from "next/image"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { useState } from "react"
 
-const testimonials = [
-  {
-    quote:
-      "Everyone was a pleasure to work with and the project was completed in a timely and professional manner.",
-    name: "D. Payne",
-    location: "Green Valley, IL",
-    initial: "D",
-    color: "bg-[#c41230]",
-  },
-  {
-    quote:
-      "Everyone was a pleasure to work with and the project was completed in a timely and professional manner.",
-    name: "D. Payne",
-    location: "Green Valley, IL",
-    initial: "M",
-    color: "bg-[#7c3aed]",
-  },
+const galleryImages = [
+  "/images/bjs-interior.jpg",
+  "/images/bjs-bathroom.jpg",
+  "/images/bjs-exterior.jpg",
 ]
 
 export function BJsTestimonialsSection() {
   const [currentIndex, setCurrentIndex] = useState(0)
 
   const handlePrev = () => {
-    setCurrentIndex((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1))
+    setCurrentIndex((prev) => (prev === 0 ? galleryImages.length - 1 : prev - 1))
   }
 
   const handleNext = () => {
-    setCurrentIndex((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1))
+    setCurrentIndex((prev) => (prev === galleryImages.length - 1 ? 0 : prev + 1))
   }
 
   return (
-    <section className="py-12 md:py-16 bg-background">
+    <section className="py-6 bg-background">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <p className="text-sm font-semibold text-[#c41230] uppercase tracking-wide mb-2">
-          Testimonials
-        </p>
-        <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
-          Happy Customers
-        </h2>
-        <p className="text-muted-foreground mb-8">
-          Real reviews from real homeowners who trusted BJ&apos;s with their installation projects.
-        </p>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-          {testimonials.map((testimonial, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-lg p-6 border border-border"
-            >
-              <p className="text-foreground mb-6 leading-relaxed">
-                &ldquo;{testimonial.quote}&rdquo;
-              </p>
-              <div className="flex items-center gap-3">
-                <div
-                  className={`w-10 h-10 rounded-full ${testimonial.color} flex items-center justify-center text-white font-semibold`}
-                >
-                  {testimonial.initial}
+        {/* Gallery with Testimonial Overlay */}
+        <div className="relative">
+          {/* Image Gallery */}
+          <div className="relative aspect-[2/1] overflow-hidden rounded-lg">
+            <div className="absolute inset-0 flex">
+              {galleryImages.map((img, idx) => (
+                <div key={idx} className="relative flex-1">
+                  <Image
+                    src={img}
+                    alt={`Project gallery ${idx + 1}`}
+                    fill
+                    className="object-cover"
+                  />
                 </div>
-                <div>
-                  <p className="text-sm font-semibold text-foreground">
-                    {testimonial.name}
-                  </p>
-                  <p className="text-xs text-muted-foreground">
-                    {testimonial.location}
-                  </p>
-                </div>
-              </div>
+              ))}
             </div>
-          ))}
-        </div>
+            
+            {/* Navigation Arrows */}
+            <button
+              onClick={handlePrev}
+              className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/80 hover:bg-white flex items-center justify-center transition-colors"
+              aria-label="Previous"
+            >
+              <ChevronLeft className="w-5 h-5 text-gray-800" />
+            </button>
+            <button
+              onClick={handleNext}
+              className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/80 hover:bg-white flex items-center justify-center transition-colors"
+              aria-label="Next"
+            >
+              <ChevronRight className="w-5 h-5 text-gray-800" />
+            </button>
+          </div>
 
-        <div className="flex items-center justify-center gap-2">
-          <button
-            onClick={handlePrev}
-            className="w-10 h-10 rounded-full border border-border bg-white flex items-center justify-center hover:bg-gray-50 transition-colors"
-            aria-label="Previous testimonial"
-          >
-            <ChevronLeft className="w-5 h-5 text-muted-foreground" />
-          </button>
-          <button
-            onClick={handleNext}
-            className="w-10 h-10 rounded-full border border-border bg-white flex items-center justify-center hover:bg-gray-50 transition-colors"
-            aria-label="Next testimonial"
-          >
-            <ChevronRight className="w-5 h-5 text-muted-foreground" />
-          </button>
+          {/* Testimonial Card Overlay */}
+          <div className="absolute bottom-8 left-1/2 -translate-x-1/2 bg-white rounded-lg shadow-xl p-6 max-w-md w-full mx-4">
+            <h3 className="text-[#c41230] font-bold text-lg mb-2">Happy Customers</h3>
+            <p className="text-gray-700 text-sm mb-4 leading-relaxed">
+              &ldquo;I am happy with my new bathroom and the work done to complete it. The company tried to respond to all of my questions and concerns in a timely fashion.&rdquo;
+            </p>
+            <p className="text-gray-600 text-sm italic">- Tiffany H.</p>
+          </div>
         </div>
       </div>
     </section>

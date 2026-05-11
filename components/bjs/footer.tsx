@@ -48,7 +48,7 @@ export function BJsFooter() {
             </div>
             <div>
               <p className="text-xs text-white/80">Call Us</p>
-              <p className="text-lg font-bold">1-866-910-4833</p>
+              <p className="text-lg font-bold">877-BJS-4747</p>
             </div>
           </div>
         </div>
@@ -73,7 +73,7 @@ export function BJsFooter() {
               <span>&copy; 2014-2026 Powered by</span>
               <a
                 href="#"
-                className="text-[#8CBE44] hover:text-[#9dcc52] transition-colors"
+                className="text-[#ffd700] hover:text-yellow-300 transition-colors"
               >
                 Installation Made Easy, Inc.
               </a>
