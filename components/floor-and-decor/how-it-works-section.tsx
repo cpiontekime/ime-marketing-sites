@@ -1,63 +1,40 @@
-import { CalendarCheck, DollarSign, Truck } from "lucide-react"
+import { CalendarCheck, ShoppingCart, Armchair } from "lucide-react"
 
 const steps = [
   {
-    number: "01",
     icon: CalendarCheck,
-    title: "Schedule your Free Estimate",
-    description:
-      "Book a convenient time for our experts to visit your property. We'll assess your needs and provide a detailed, no-obligation quote.",
+    title: "Schedule your Measure & Estimate",
+    color: "bg-[#1a5f7a]",
   },
   {
-    number: "02",
-    icon: DollarSign,
+    icon: ShoppingCart,
     title: "Purchase your Materials & Accessories",
-    description:
-      "Book a convenient time for our experts to visit your property. We'll assess your needs and provide a detailed, no-obligation quote.",
+    color: "bg-[#1a5f7a]",
   },
   {
-    number: "03",
-    icon: Truck,
+    icon: Armchair,
     title: "Sit Back, Relax & Leave it to the Pros",
-    description:
-      "Book a convenient time for our experts to visit your property. We'll assess your needs and provide a detailed, no-obligation quote.",
+    color: "bg-[#1a5f7a]",
   },
 ]
 
 export function FloorDecorHowItWorksSection() {
   return (
-    <section className="w-full py-12 md:py-16 bg-background">
+    <section className="w-full py-12 md:py-16 bg-white">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <p className="text-sm font-semibold text-[#f26522] uppercase tracking-wide mb-2">
-          How It Works
-        </p>
-        <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
-          Updating your home is as easy as 1 - 2 - 3
+        <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-900 mb-12">
+          Upgrading your home is as easy as 1-2-3.
         </h2>
-        <p className="text-muted-foreground mb-8">
-          A simple, streamlined process designed to make home improvement hassle free.
-        </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {steps.map((step) => (
-            <div
-              key={step.number}
-              className="relative bg-white rounded-lg border border-border p-6"
-            >
-              <div className="flex items-start justify-between mb-4">
-                <div className="w-12 h-12 rounded-lg bg-[#fef0e8] flex items-center justify-center">
-                  <step.icon className="w-6 h-6 text-[#f26522]" />
-                </div>
-                <span className="text-4xl font-bold text-gray-200">
-                  {step.number}
-                </span>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {steps.map((step, index) => (
+            <div key={index} className="flex flex-col items-center text-center">
+              <div className={`w-20 h-20 rounded-full ${step.color} flex items-center justify-center mb-4`}>
+                <step.icon className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-base font-semibold text-foreground mb-2">
+              <h3 className="text-base font-semibold text-gray-900 max-w-[200px]">
                 {step.title}
               </h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                {step.description}
-              </p>
             </div>
           ))}
         </div>
