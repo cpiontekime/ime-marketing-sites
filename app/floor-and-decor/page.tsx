@@ -1,3 +1,4 @@
+import { ScrollAnimate } from "@/components/ui/scroll-animate"
 import { FloorDecorHeader } from "@/components/floor-and-decor/header"
 import { FloorDecorHeroSection } from "@/components/floor-and-decor/hero-section"
 import { FloorDecorServicesSection } from "@/components/floor-and-decor/services-section"
@@ -11,11 +12,21 @@ export default function FloorAndDecorPage() {
     <div className="min-h-screen flex flex-col">
       <FloorDecorHeader />
       <main className="flex-1">
-        <FloorDecorHeroSection />
-        <FloorDecorServicesSection />
-        <FloorDecorHowItWorksSection />
-        <FloorDecorLearnMoreSection />
-        <FloorDecorTestimonialsSection />
+        <ScrollAnimate>
+          <FloorDecorHeroSection />
+        </ScrollAnimate>
+        <ScrollAnimate>
+          <FloorDecorServicesSection />
+        </ScrollAnimate>
+        <ScrollAnimate>
+          <FloorDecorHowItWorksSection />
+        </ScrollAnimate>
+        <ScrollAnimate>
+          <FloorDecorLearnMoreSection />
+        </ScrollAnimate>
+        <ScrollAnimate>
+          <FloorDecorTestimonialsSection />
+        </ScrollAnimate>
       </main>
       <FloorDecorFooter />
     </div>

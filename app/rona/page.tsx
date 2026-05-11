@@ -1,3 +1,4 @@
+import { ScrollAnimate } from "@/components/ui/scroll-animate"
 import { RonaHeader } from "@/components/rona/header"
 import { RonaHeroSection } from "@/components/rona/hero-section"
 import { RonaServicesSection } from "@/components/rona/services-section"
@@ -10,10 +11,18 @@ export default function RonaPage() {
     <div className="min-h-screen flex flex-col">
       <RonaHeader lang="en" />
       <main className="flex-1">
-        <RonaHeroSection lang="en" />
-        <RonaServicesSection lang="en" />
-        <RonaHowItWorksSection lang="en" />
-        <RonaTestimonialsSection lang="en" />
+        <ScrollAnimate>
+          <RonaHeroSection lang="en" />
+        </ScrollAnimate>
+        <ScrollAnimate>
+          <RonaServicesSection lang="en" />
+        </ScrollAnimate>
+        <ScrollAnimate>
+          <RonaHowItWorksSection lang="en" />
+        </ScrollAnimate>
+        <ScrollAnimate>
+          <RonaTestimonialsSection lang="en" />
+        </ScrollAnimate>
       </main>
       <RonaFooter lang="en" />
     </div>
