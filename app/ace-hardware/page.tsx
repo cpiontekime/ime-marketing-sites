@@ -1,3 +1,4 @@
+import { ScrollAnimate } from "@/components/ui/scroll-animate"
 import { AceHeader } from "@/components/ace-hardware/header"
 import { AceHeroSection } from "@/components/ace-hardware/hero-section"
 import { AceServicesSection } from "@/components/ace-hardware/services-section"
@@ -11,11 +12,21 @@ export default function AceHardwarePage() {
     <div className="min-h-screen flex flex-col">
       <AceHeader />
       <main className="flex-1">
-        <AceHeroSection />
-        <AceServicesSection />
-        <AceHowItWorksSection />
-        <AceLearnMoreSection />
-        <AceTestimonialsSection />
+        <ScrollAnimate>
+          <AceHeroSection />
+        </ScrollAnimate>
+        <ScrollAnimate>
+          <AceServicesSection />
+        </ScrollAnimate>
+        <ScrollAnimate>
+          <AceHowItWorksSection />
+        </ScrollAnimate>
+        <ScrollAnimate>
+          <AceLearnMoreSection />
+        </ScrollAnimate>
+        <ScrollAnimate>
+          <AceTestimonialsSection />
+        </ScrollAnimate>
       </main>
       <AceFooter />
     </div>

@@ -1,3 +1,4 @@
+import { ScrollAnimate } from "@/components/ui/scroll-animate"
 import { LowesHeader } from "@/components/lowes/header"
 import { LowesHeroSection } from "@/components/lowes/hero-section"
 import { LowesServicesSection } from "@/components/lowes/services-section"
@@ -11,11 +12,21 @@ export default function LowesPage() {
     <div className="min-h-screen flex flex-col">
       <LowesHeader />
       <main className="flex-1">
-        <LowesHeroSection />
-        <LowesServicesSection />
-        <LowesHowItWorksSection />
-        <LowesLearnMoreSection />
-        <LowesTestimonialsSection />
+        <ScrollAnimate>
+          <LowesHeroSection />
+        </ScrollAnimate>
+        <ScrollAnimate>
+          <LowesServicesSection />
+        </ScrollAnimate>
+        <ScrollAnimate>
+          <LowesHowItWorksSection />
+        </ScrollAnimate>
+        <ScrollAnimate>
+          <LowesLearnMoreSection />
+        </ScrollAnimate>
+        <ScrollAnimate>
+          <LowesTestimonialsSection />
+        </ScrollAnimate>
       </main>
       <LowesFooter />
     </div>

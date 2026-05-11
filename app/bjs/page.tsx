@@ -1,3 +1,4 @@
+import { ScrollAnimate } from "@/components/ui/scroll-animate"
 import { BJsHeader } from "@/components/bjs/header"
 import { BJsHeroSection } from "@/components/bjs/hero-section"
 import { BJsServicesSection } from "@/components/bjs/services-section"
@@ -11,11 +12,21 @@ export default function BJsPage() {
     <div className="min-h-screen flex flex-col">
       <BJsHeader />
       <main className="flex-1">
-        <BJsHeroSection />
-        <BJsServicesSection />
-        <BJsHowItWorksSection />
-        <BJsLearnMoreSection />
-        <BJsTestimonialsSection />
+        <ScrollAnimate>
+          <BJsHeroSection />
+        </ScrollAnimate>
+        <ScrollAnimate>
+          <BJsServicesSection />
+        </ScrollAnimate>
+        <ScrollAnimate>
+          <BJsHowItWorksSection />
+        </ScrollAnimate>
+        <ScrollAnimate>
+          <BJsLearnMoreSection />
+        </ScrollAnimate>
+        <ScrollAnimate>
+          <BJsTestimonialsSection />
+        </ScrollAnimate>
       </main>
       <BJsFooter />
     </div>

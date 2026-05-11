@@ -1,3 +1,4 @@
+import { ScrollAnimate } from "@/components/ui/scroll-animate"
 import { SamsClubHeader } from "@/components/sams-club/header"
 import { SamsClubHeroSection } from "@/components/sams-club/hero-section"
 import { SamsClubServicesSection } from "@/components/sams-club/services-section"
@@ -11,11 +12,21 @@ export default function SamsClubPage() {
     <div className="min-h-screen flex flex-col">
       <SamsClubHeader />
       <main className="flex-1">
-        <SamsClubHeroSection />
-        <SamsClubServicesSection />
-        <SamsClubHowItWorksSection />
-        <SamsClubLearnMoreSection />
-        <SamsClubTestimonialsSection />
+        <ScrollAnimate>
+          <SamsClubHeroSection />
+        </ScrollAnimate>
+        <ScrollAnimate>
+          <SamsClubServicesSection />
+        </ScrollAnimate>
+        <ScrollAnimate>
+          <SamsClubHowItWorksSection />
+        </ScrollAnimate>
+        <ScrollAnimate>
+          <SamsClubLearnMoreSection />
+        </ScrollAnimate>
+        <ScrollAnimate>
+          <SamsClubTestimonialsSection />
+        </ScrollAnimate>
       </main>
       <SamsClubFooter />
     </div>
