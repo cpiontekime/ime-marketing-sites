@@ -101,7 +101,7 @@ export function RonaFooter({ lang = "en" }: RonaFooterProps) {
               <span>CMS_01 2.83.20003</span>
             </div>
             <div className="flex items-center gap-1">
-              <span>&copy; 2014-2025 {t.poweredBy}</span>
+              <span>&copy; 2014-2026 {t.poweredBy}</span>
               <a
                 href="#"
                 className="text-[#c9a227] hover:text-[#dbb833] transition-colors"

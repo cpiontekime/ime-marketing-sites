@@ -70,7 +70,7 @@ export function NTEFooter() {
               <span>CMS_01 2.83.000</span>
             </div>
             <div className="flex items-center gap-1">
-              <span>&copy; 2014-2025 Powered by</span>
+              <span>&copy; 2014-2026 Powered by</span>
               <a
                 href="#"
                 className="text-[#8CBE44] hover:text-[#9dcc52] transition-colors"
