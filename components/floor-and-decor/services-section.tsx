@@ -2,15 +2,15 @@ import Image from "next/image"
 import Link from "next/link"
 
 const products = [
-  { name: "Bath Remodel", image: "/images/fd-bath-remodel.jpg" },
-  { name: "Bathroom Vanities", image: "/images/fd-vanities.jpg" },
-  { name: "Countertops", image: "/images/fd-countertops.jpg" },
-  { name: "Deck & Pavers", image: "/images/fd-deck-pavers.jpg" },
-  { name: "Faucets/Shower Heads", image: "/images/fd-faucets.jpg" },
-  { name: "Flooring", image: "/images/fd-flooring.jpg" },
-  { name: "Shower Doors", image: "/images/fd-shower-doors.jpg" },
-  { name: "Sinks", image: "/images/fd-sinks.jpg" },
-  { name: "XL Slabs", image: "/images/fd-xl-slabs.jpg" },
+  { name: "Bath Remodel", image: "/images/fd-bath-remodel.jpg", href: "/floor-and-decor/products/bath-remodel" },
+  { name: "Bathroom Vanities", image: "/images/fd-vanities.jpg", href: "/floor-and-decor/products/bathroom-vanities" },
+  { name: "Countertops", image: "/images/fd-countertops.jpg", href: "/floor-and-decor/products/countertops" },
+  { name: "Deck & Pavers", image: "/images/fd-deck-pavers.jpg", href: "#" },
+  { name: "Faucets/Shower Heads", image: "/images/fd-faucets.jpg", href: "#" },
+  { name: "Flooring", image: "/images/fd-flooring.jpg", href: "#" },
+  { name: "Shower Doors", image: "/images/fd-shower-doors.jpg", href: "#" },
+  { name: "Sinks", image: "/images/fd-sinks.jpg", href: "#" },
+  { name: "XL Slabs", image: "/images/fd-xl-slabs.jpg", href: "#" },
 ]
 
 export function FloorDecorServicesSection() {
@@ -31,7 +31,7 @@ export function FloorDecorServicesSection() {
           {products.map((product) => (
             <Link
               key={product.name}
-              href="#"
+              href={product.href}
               className="group flex flex-col items-center text-center"
             >
               <div className="relative w-full aspect-[4/3] mb-3 overflow-hidden rounded-sm">

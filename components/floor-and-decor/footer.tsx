@@ -12,9 +12,9 @@ const footerLinks = {
     { label: "Preparing for Your Project", href: "#" },
   ],
   "PRODUCTS": [
-    { label: "Bath Remodel", href: "#" },
-    { label: "Bathroom Vanities", href: "#" },
-    { label: "Countertops", href: "#" },
+    { label: "Bath Remodel", href: "/floor-and-decor/products/bath-remodel" },
+    { label: "Bathroom Vanities", href: "/floor-and-decor/products/bathroom-vanities" },
+    { label: "Countertops", href: "/floor-and-decor/products/countertops" },
     { label: "Decks & Pavers", href: "#" },
     { label: "Faucets/Shower Heads", href: "#" },
     { label: "Flooring", href: "#" },
